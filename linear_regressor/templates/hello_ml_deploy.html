@@ -4,15 +4,21 @@
 
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='hw.css') }}">
 {% endblock %}
 
 {% block title %}Hello ml on flask{% endblock %}
 {% block content %}
 <div class="page-header">
-    <h1>{{intro}}</h1>
+    <h1 class="intro">{{intro}}</h1>
 </div>
-<div class="container form">
+<div class="container">
     {{ wtf.quick_form(form) }}
+</div>
+<div class="container box">
+    {% if prediction %}
+        <h4 class="input">input given for bmi is <b>{{input}}</b></h4>
+        <h4 class ="input">predicted results are <b>{{prediction}}</b></h4>
+    {% endif %}
 </div>
 {% endblock %}
