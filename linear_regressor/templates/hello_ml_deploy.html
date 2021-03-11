@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 {% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+{% endblock %}
+
 {% block title %}Hello ml on flask{% endblock %}
 {% block content %}
+<div class="page-header">
     <h1>{{intro}}</h1>
+</div>
+<div class="container form">
+    {{ wtf.quick_form(form) }}
+</div>
 {% endblock %}
