@@ -6,5 +6,6 @@
 }
 
 .box{
+    padding:100px 100px;
     border: 1px solid black;
 }
